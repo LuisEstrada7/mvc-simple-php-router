@@ -9,7 +9,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <form>
+        <form id="form-insertUpdate">
         <input type="hidden" name="id" id="id">
         <div class="form-row">
             <div class="form-group col-md-6">
@@ -43,7 +43,7 @@
             <div class="form-group col-md-4">
             <label for="cboFase">Fase de tareas</label>
             <select id="cboFase" class="form-control">
-                <option selected>Escoger</option>
+                <option selected value="">Escoger</option>
                 <option value="1">Fase 1</option>
                 <option value="2">Fase 2</option>
                 <option value="3">Fase 3</option>

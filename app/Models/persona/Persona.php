@@ -29,8 +29,7 @@ class Persona{
         }else{
             $array  = $stm->error;
         }
-        $json = json_encode($array);
-        return $json;
+        return $array;
     }
     public function get(){
         $stm = $this->cn->prepare('SELECT * FROM personas WHERE id = ?');

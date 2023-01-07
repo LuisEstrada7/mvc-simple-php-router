@@ -9,7 +9,7 @@ class cn{
         $this->host = "localhost";
         $this->user="root";
         $this->pass="";
-        $this->database="prueba_mvc";
+        $this->database="ejemplo_mvc";
     }
 
     public function conectar(){

@@ -14,8 +14,11 @@ SimpleRouter::get('/login', function () {
 });
 
 SimpleRouter::group(['prefix' => '/persona'], function () {
-    SimpleRouter::get('/', function () { include './app/views/persona/persona.php';});
+    SimpleRouter::get('/', function () { 
+        include './app/views/persona/persona.php';
+    });
     SimpleRouter::get('/getAll', 'persona\personaController@getAll');
     SimpleRouter::get('/{id}', 'persona\personaController@get');
     SimpleRouter::post('/insertUpdate', 'persona\personaController@insertUpdate');
+    SimpleRouter::delete('/{id}', 'persona\personaController@delete');
 });

@@ -9,7 +9,7 @@ class personaController{
     public function getAll(){
         $personas = new Persona();
         $personas = $personas->getAll();
-        return $personas;
+        return json_encode($personas);
     }
     public function get($id){
         $id = isset($id) ? $id : null;
@@ -20,22 +20,27 @@ class personaController{
         return json_encode($persona);
     }
     public function insertUpdate(){
-        $id = isset($_POST['id']) ? $_POST['id'] : null;
+        $values = input()->all();
+        $id = isset($values['id']) ? $values['id'] : null;
         $id = $id > 0 ? $id : null;
         $persona = new Persona();
         $persona->setId($id);
-        $persona->setDni($_POST["dni"]);
-        $persona->setNombres($_POST["nombres"]);
-        $persona->setApePaterno($_POST["paterno"]);
-        $persona->setApeMaterno($_POST["materno"]);
-        $persona->setCorreo($_POST["celular"]);
+        $persona->setDni($values["dni"]);
+        $persona->setApePaterno($values["paterno"]);
+        $persona->setApeMaterno($values["materno"]);
+        $persona->setNombres($values["nombres"]);
+        $persona->setCorreo($values["email"]);
+        $persona->setLenguaje($values["lenguaje"]);
+        $persona->setFase($values["fase"]);
+        $persona->setEdad($values["edad"]);
+        $persona->setComprendido($values["comprendido"]);
         $message = $persona->insertUpdate();
         $personas = $persona->getAll();
         $resultado = [$message, $personas];
         return json_encode($resultado);
     }
-    public function delete(){
-        $id = isset($_GET['id']) ? $_GET['id'] : null;
+    public function delete($id){
+        $id = isset($id) ? $id : null;
         $id = $id > 0 ? $id : null;
         $persona = new Persona();
         $persona->setId($id);

@@ -10,7 +10,11 @@ ob_start();
                     <th>N°</th>
                     <th>DNI</th>
                     <th>Nombres</th>
+                    <th>Correo</th>
+                    <th>Lenguaje</th>
+                    <th>Fase</th>
                     <th>Edad</th>
+                    <th>Comprendido</th>
                     <th>Opciones</th>
                 </tr>
             </thead>

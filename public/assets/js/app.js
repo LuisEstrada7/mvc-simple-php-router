@@ -10,13 +10,14 @@ export const cargando_tbody =  `<tr>
                         </tr>`;
 export const tbody_sinRegistros = `<tr><td colspan='100%' style='text-align: center;'>No se encontraron registros</td></tr>`;
 export const cargador__ = 'before-page';
-export const fetch_get = (_url) => {
+export const fetch_ = (_url, _type) => {
     return fetch(_url, {
+        method: _type,
         headers:{ 'Content-Type': 'application/json' }
     }).then(res => res.json())
     .then(response => response);
 };
-export const fetch_ = (_url,_type,_data) => {
+export const fetch__ = (_url,_type,_data) => {
     return fetch(_url, {
         method: _type,
         body: JSON.stringify(_data),
